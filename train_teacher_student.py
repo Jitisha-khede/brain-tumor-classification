@@ -83,6 +83,8 @@ def train_student(epochs=10, alpha=0.5, temperature=3.0):
         print(f"Loss: {total_loss / len(train_loader):.4f}")
         print(f"Accuracy: {acc:.4f}, F1-score: {f1:.4f}")
         print("Confusion Matrix:\n", cm)
+        torch.save(student.state_dict(), "mobilenet_student.pth")
+        print("Student model saved as mobilenet_student.pth")
 
 # -----------------------------
 # 5. Train Student
